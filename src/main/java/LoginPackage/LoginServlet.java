@@ -28,11 +28,11 @@ public class LoginServlet extends HttpServlet {
         else if(Validation==1){
             request.getSession().setAttribute("name",Username);
             //if he is an admin then he should be redirected to the admin Page
-            response.sendRedirect("/Todo.do");
+            response.sendRedirect("/administer.do");
         }
         else if(Validation==0){
             //if he is a student then he should be redirected to the normal student Page
-            request.getSession().setAttribute("name",Username);
-            response.sendRedirect("/Todo.do");
+            request.getSession().setAttribute("Username",Username);
+            response.sendRedirect("/studentship.do");
         } }
 }
