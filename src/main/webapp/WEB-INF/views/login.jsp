@@ -24,7 +24,7 @@
         <p>
             <font color="red">${errorMessage}</font>
         </p>
-        Username: <input type="text" name="name" /> Password:<input
+        Username: <input type="text" name="Username" /> Password:<input
             type="password" name="password" /> <BR/><br/><input type="submit" value="Login" /> <a href="/signup.do" class="btn">Sign Up</a>
     </form>
 

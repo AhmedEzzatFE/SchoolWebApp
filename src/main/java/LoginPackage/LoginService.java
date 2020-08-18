@@ -27,7 +27,7 @@ public class LoginService {
 //    public static void main(String[] args) throws SQLException {
 //        System.out.println(UsersList);
 //        LoginService x = new LoginService();
-//     System.out.println(x.isValid("Admin1","12345"));
+//        System.out.println(x.AddUser("hezzat4","12345","Ahmed",55555,21));
 //    }
    public int isValid(String Username,String Password){
          if(!UsersList.contains(new UserLogin(Username,Password,true)) && UsersList.contains(new UserLogin(Username,Password,false))){
@@ -43,10 +43,10 @@ public class LoginService {
    //For the sign up of the users
     public int AddUser(String Username,String password,String Name , int Telephone , int Age) throws SQLException {
         int validation= isValid(Username,password);
-        if(validation==0){
+
+        if(validation==-1){
             UsersList.add(new UserLogin(Username,password,false));
-            Connection
-                    conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
+            Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
             String query = " insert into Student (StudentName,Username,Telephone,Age,Password)"
                     + " values (?, ?, ?, ?, ?)";
             // create the mssql insert preparedstatement

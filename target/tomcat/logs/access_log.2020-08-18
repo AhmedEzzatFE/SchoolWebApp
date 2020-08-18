@@ -102,3 +102,5 @@
 0:0:0:0:0:0:0:1 - - [18/Aug/2020:20:55:26 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 404 1019 http-bio-8080-exec-5 1
 0:0:0:0:0:0:0:1 - - [18/Aug/2020:20:58:49 +0200] "POST /signup.do HTTP/1.1" 200 1136 http-bio-8080-exec-1 286
 0:0:0:0:0:0:0:1 - - [18/Aug/2020:20:58:49 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 404 1019 http-bio-8080-exec-3 2
+0:0:0:0:0:0:0:1 - - [18/Aug/2020:23:59:25 +0200] "POST /signup.do HTTP/1.1" 200 1136 http-bio-8080-exec-5 4
+0:0:0:0:0:0:0:1 - - [18/Aug/2020:23:59:25 +0200] "GET /webjars/jquery/1.9.1/jquery.min.js HTTP/1.1" 404 1019 http-bio-8080-exec-7 1
