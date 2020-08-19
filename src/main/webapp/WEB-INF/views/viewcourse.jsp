@@ -19,20 +19,11 @@
 
 <body>
 <div class="container">
-    <H1>Welcome ${Username}</H1>
 
-    Your Courses are
-    <ol>
-        <c:forEach items="${CourseList}" var="Course">
-            <li>Course Name: ${Course.coursename}&nbsp&nbsp;  Credit Hours: ${Course.credithours} <a
-                    href="/viewcourse.do?coursename=${Course.coursename}">Details</a></li>
-        </c:forEach>
-    </ol>
-
-    <a href="/add-todo.do">Add new Course</a>
-    <p>
-        <font color="red">${errorMessage}</font>
-    </p>
+    <h1>Course Details</h1>
+    <p>Course Name:${Coursedetails.coursename}</p><br/><p>Your Grade: ${Coursedetails.grade}</p><br/>
+    <p>Current Teacher:${Coursedetails.teachername}</p><br/>
+    <p>Teacher Contact info: ${Coursedetails.teachertelephone}</p>
 </div>
 
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>

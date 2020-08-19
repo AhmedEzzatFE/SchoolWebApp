@@ -20,13 +20,12 @@ public class LoginServlet extends HttpServlet {
         String password= request.getParameter("password");
         String Username= request.getParameter("Username");
         int Validation = x.isValid(Username,password);
-        System.out.println(Validation);
         if(Validation==-1){
                 request.setAttribute("errorMessage","Invalid Credentials");
                 request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request,response);
         }
         else if(Validation==1){
-            request.getSession().setAttribute("name",Username);
+            request.getSession().setAttribute("Username",Username);
             //if he is an admin then he should be redirected to the admin Page
             response.sendRedirect("/administer.do");
         }

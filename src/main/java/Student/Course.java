@@ -3,14 +3,14 @@ package Student;
 import java.util.Objects;
 
 public class Course {
-    private String CourseName;
-    private int CreditHours;
+    private String coursename;
+    private int credithours;
 
     @Override
     public String toString() {
         return "Course{" +
-                "CourseName='" + CourseName + '\'' +
-                ", CreditHours=" + CreditHours +
+                "CourseName='" + coursename + '\'' +
+                ", CreditHours=" + credithours +
                 '}';
     }
 
@@ -19,33 +19,33 @@ public class Course {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return CreditHours == course.CreditHours &&
-                Objects.equals(CourseName, course.CourseName);
+        return credithours == course.credithours &&
+                Objects.equals(coursename, course.coursename);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(CourseName, CreditHours);
+        return Objects.hash(coursename, credithours);
     }
 
-    public String getCourseName() {
-        return CourseName;
+    public String getCoursename() {
+        return coursename;
     }
 
-    public void setCourseName(String courseName) {
-        CourseName = courseName;
+    public void setCoursename(String coursename) {
+        this.coursename = coursename;
     }
 
-    public int getCreditHours() {
-        return CreditHours;
+    public int getCredithours() {
+        return credithours;
     }
 
-    public void setCreditHours(int creditHours) {
-        CreditHours = creditHours;
+    public void setCredithours(int credithours) {
+        this.credithours = credithours;
     }
 
-    public Course(String courseName, int creditHours) {
-        CourseName = courseName;
-        CreditHours = creditHours;
+    public Course(String coursename, int credithours) {
+        this.coursename = coursename;
+        this.credithours = credithours;
     }
 }
