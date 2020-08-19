@@ -1,14 +1,16 @@
 package Student;
 
-import LoginPackage.UserLogin;
+import Student.Course;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CourseService {
-    public void ShowCourses(String Username){
-        List<Course> CourseList=new ArrayList<>();
+
+    public  List<Course> ShowCourses(String Username){
+        System.out.println(Username);
+        List<Course> CourseList=new ArrayList<Course>();
         Connection conn;
         try {
             conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
@@ -17,17 +19,17 @@ public class CourseService {
                     " in(SELECT CID FROM enroll where SID=(SELECT StudentID from Student where Username='"+Username+"'))";
             ResultSet rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                System.out.println(rs.getString("CourseName"));
+                CourseList.add(new Course(rs.getString("CourseName"),rs.getInt("CreditHours")));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-
+        }return CourseList;
     }
 
-        public static void main(String[] args) throws SQLException {
-        CourseService x = new CourseService();
-       x.ShowCourses("hezzat46");
-    }
+//        public static void main(String[] args) throws SQLException {
+//        CourseService x = new CourseService();
+//       x.ShowCourses("hezzat46");
+//    }
 
 }

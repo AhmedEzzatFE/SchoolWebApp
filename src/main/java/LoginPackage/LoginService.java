@@ -43,7 +43,6 @@ public class LoginService {
    //For the sign up of the users
     public int AddUser(String Username,String password,String Name , int Telephone , int Age) throws SQLException {
         int validation= isValid(Username,password);
-
         if(validation==-1){
             UsersList.add(new UserLogin(Username,password,false));
             Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
