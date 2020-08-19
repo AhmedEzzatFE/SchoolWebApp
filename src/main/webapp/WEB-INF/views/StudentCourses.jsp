@@ -29,7 +29,7 @@
         </c:forEach>
     </ol>
 
-    <a href="/add-todo.do">Add new Course</a>
+    <a href="/add-course.do">Add new Course</a>
     <p>
         <font color="red">${errorMessage}</font>
     </p>
