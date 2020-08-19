@@ -60,9 +60,9 @@ public class CourseService {
             throwables.printStackTrace();
         }
     }
-        public static void main(String[] args) throws SQLException {
-        CourseService x = new CourseService();
-       x.AddCourse("Math1","hezzat46");
-    }
+//        public static void main(String[] args) throws SQLException {
+//        CourseService x = new CourseService();
+//       x.AddCourse("Math1","hezzat46");
+//    }
 
 }
