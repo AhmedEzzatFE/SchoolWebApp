@@ -57,7 +57,6 @@ public class LoginService {
             preparedStmt.setString (5, password);
             // execute the preparedstatement
             preparedStmt.execute();
-            System.out.println("Signed Up");
             return 1;
         }
         else{return 0;}
