@@ -9,7 +9,6 @@ import java.util.List;
 public class CourseService {
 
     public  List<Course> ShowCourses(String Username){
-        System.out.println(Username);
         List<Course> CourseList=new ArrayList<Course>();
         Connection conn;
         try {

@@ -12,7 +12,6 @@ public class CourseServlet extends HttpServlet {
 CourseService x = new CourseService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-        ;
         request.setAttribute("CourseList",x.ShowCourses((String) request.getSession().getAttribute("Username")));
         request.getRequestDispatcher("/WEB-INF/views/StudentCourses.jsp").forward(request,response);
     }

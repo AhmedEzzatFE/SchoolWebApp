@@ -1,2 +1,3 @@
 LoginPackage\SignUpServlet.class
 Student\CourseServlet.class
+Student\ViewCourse.class
