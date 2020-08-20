@@ -19,7 +19,6 @@ CourseService x = new CourseService();
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-    System.out.println(request.getParameter("category"));
     try {
             x.AddCourse(request.getParameter("category"),(String) request.getSession().getAttribute("Username"));
         } catch (SQLException throwables) {
