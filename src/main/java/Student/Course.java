@@ -44,6 +44,10 @@ public class Course {
         this.credithours = credithours;
     }
 
+    public Course(String coursename) {
+        this.coursename = coursename;
+    }
+
     public Course(String coursename, int credithours) {
         this.coursename = coursename;
         this.credithours = credithours;

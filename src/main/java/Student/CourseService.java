@@ -7,25 +7,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseService {
-    public  List<Course> ShowCourses(String Username){
-          List<Course> CourseList= new ArrayList<>();
+    public List<Course> ShowCourses(String Username) {
+        List<Course> CourseList = new ArrayList<>();
         Connection conn;
         try {
             conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
             Statement stmt = conn.createStatement();
             String SQL = "SELECT CourseName,CreditHours from Course where CourseID" +
-                    " in(SELECT CID FROM enroll where SID=(SELECT StudentID from Student where Username='"+Username+"'))";
+                    " in(SELECT CID FROM enroll where SID=(SELECT StudentID from Student where Username='" + Username + "'))";
             ResultSet rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                CourseList.add(new Course(rs.getString("CourseName"),rs.getInt("CreditHours")));
+                CourseList.add(new Course(rs.getString("CourseName"), rs.getInt("CreditHours")));
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }return CourseList;
+        }
+        return CourseList;
     }
 
-    public void AddCourse(String Coursename,String Username) throws SQLException {
+    public void AddCourse(String Coursename, String Username) throws SQLException {
         int StudentID = 0;
         int CourseID = 0;
 
@@ -40,12 +41,12 @@ public class CourseService {
             String SQL = "SELECT StudentID from Student where Username='" + Username + "'";
             ResultSet rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                StudentID=rs.getInt("StudentID");
+                StudentID = rs.getInt("StudentID");
             }
             SQL = "SELECT CourseID from Course where CourseName='" + Coursename + "'";
-            rs=stmt.executeQuery(SQL);
-            while(rs.next()){
-                CourseID=rs.getInt("CourseID");
+            rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                CourseID = rs.getInt("CourseID");
             }
 
             String query = " insert into enroll (SID,CID)"
@@ -60,9 +61,36 @@ public class CourseService {
             throwables.printStackTrace();
         }
     }
-//        public static void main(String[] args) throws SQLException {
-//        CourseService x = new CourseService();
-//       x.AddCourse("Math1","hezzat46");
-//    }
 
+    public List<Course> ShowNewcourses(String Username) {
+        List<Course> x = new ArrayList<>();
+        int StudentID = 0;
+        try {
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            Statement stmt = conn.createStatement();
+            String SQL = "SELECT StudentID from Student where Username='" + Username + "'";
+            ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                StudentID = rs.getInt("StudentID");
+            }
+            SQL = "Select CourseName From Course where CourseID NOT IN (SELECT CID from enroll where SID='" + StudentID + "')";
+            rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                x.add(new Course(rs.getString("CourseName")));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return x;
+    }
+//    public static void main(String[] args) throws SQLException {
+//        CourseService x = new CourseService();
+//        x.ShowNewcourses("hezzat46");
+//    }
 }
