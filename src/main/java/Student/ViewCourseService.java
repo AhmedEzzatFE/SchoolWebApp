@@ -34,7 +34,6 @@ public class ViewCourseService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(x);
         return x;
     }
 
