@@ -28,8 +28,16 @@
                     href="/viewcourse.do?coursename=${Course.coursename}">Details</a></li>
         </c:forEach>
     </ol>
-
-    <a href="/add-course.do">Add new Course</a>
+    <form action="/studentship.do" method="post">
+        Select a Course :&nbsp;
+        <select name="category">
+            <c:forEach items="${NewCourseList}" var="category">
+                <option value="${category.coursename}">${category.coursename}</option>
+            </c:forEach>
+        </select>
+        <br/><br/>
+        <input type="submit" value="Add Course" />
+    </form>
     <p>
         <font color="red">${errorMessage}</font>
     </p>
