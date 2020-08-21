@@ -26,7 +26,6 @@ CourseService x = new CourseService();
         }
         request.setAttribute("CourseList",x.ShowCourses((String) request.getSession().getAttribute("Username")));
         request.setAttribute("NewCourseList",x.ShowNewcourses((String) request.getSession().getAttribute("Username")));
-
         response.sendRedirect("/studentship.do");
 //        request.getRequestDispatcher("/WEB-INF/views/StudentCourses.jsp").forward(request,response);
     }

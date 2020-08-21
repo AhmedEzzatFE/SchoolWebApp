@@ -7,6 +7,10 @@ public class UserLogin {
     private String Password;
     private boolean isAdmin;
 
+    public UserLogin(String username) {
+        Username = username;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

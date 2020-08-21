@@ -37,9 +37,6 @@ public class ViewCourseService {
         return x;
     }
 
-//        public static void main(String[] args) throws SQLException {
-//        ViewCourseService x = new ViewCourseService();
-//       x.CourseDetails("Math1","hezzat46");
-//    }
+
 
 }

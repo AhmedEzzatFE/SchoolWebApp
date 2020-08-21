@@ -12,7 +12,6 @@ public class ViewCourseServlet extends HttpServlet {
     ViewCourseService x = new ViewCourseService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-       System.out.println(request.getParameter("coursename"));
        request.setAttribute("Coursedetails",x.CourseDetails(request.getParameter("coursename"),(String) request.getSession().getAttribute("Username")));
         request.getRequestDispatcher("/WEB-INF/views/viewcourse.jsp").forward(request,response);
     }
