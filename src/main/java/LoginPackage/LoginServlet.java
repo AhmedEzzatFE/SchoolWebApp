@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
         else if(Validation==1){
             request.getSession().setAttribute("Username",Username);
             //if he is an admin then he should be redirected to the admin Page
-            response.sendRedirect("/administer.do");
+            response.sendRedirect("/administerStudent.do");
         }
         else if(Validation==0){
             //if he is a student then he should be redirected to the normal student Page
