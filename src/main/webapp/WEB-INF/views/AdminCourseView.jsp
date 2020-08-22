@@ -42,6 +42,18 @@
         </c:forEach>
     </ol>
 </div>
+    <form action="/courseadmin.do" method="post">
+
+        Coursename: <input type="text" name="Username" /> <BR/><BR/>
+        Credit Hours: <input type="text" name="Name" /><BR/><BR/>
+        <select name="Teacher">
+            <c:forEach items="${TeacherList}" var="Teacher">
+                <option value="${Teacher.teachername}">${Teacher.teachername}</option>
+            </c:forEach>
+        </select>
+        <input type="submit" value="Register" />
+
+    </form>
 </div>
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
