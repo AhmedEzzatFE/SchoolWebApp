@@ -6,6 +6,9 @@ public class Student {
     public String Name;
     public String username;
 
+    public Student(String name) {
+        Name = name;
+    }
 
     @Override
     public String toString() {
