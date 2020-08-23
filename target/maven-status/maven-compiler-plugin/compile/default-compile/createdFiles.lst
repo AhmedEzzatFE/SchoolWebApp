@@ -1,4 +1,6 @@
 LoginPackage\SignUpServlet.class
 Student\ViewCourse.class
 Admin\EditStudentGradesServlet.class
+Teacher\AdminTeacherService.class
 Student\CourseServlet.class
+Teacher\Teacher.class

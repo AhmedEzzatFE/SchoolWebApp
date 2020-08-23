@@ -34,8 +34,7 @@
     </nav>
     <div class="container">
 
-        All Students Enrolled for this course are
-        <ol>
+       <h2> All Students Enrolled for this course</h2><ol>
             <c:forEach items="${CourseList}" var="Course">
                 <li>Student Name: ${Course.name}&nbsp; &nbsp;&nbsp;</li>
             </c:forEach>

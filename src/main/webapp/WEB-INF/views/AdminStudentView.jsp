@@ -34,7 +34,7 @@
 </nav>
 <div class="container">
 
-    Students in the school are:
+   <h2> Students in the school</h2>
     <ol>
         <c:forEach items="${StudentList}" var="Student">
             <li>Student Name: ${Student.name} &nbsp;  <a href="/editStudentGrades.do?Username=${Student.username}">Add Grade</a></li>

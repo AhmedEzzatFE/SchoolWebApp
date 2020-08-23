@@ -34,7 +34,7 @@
     </nav>
     <div class="container">
 
-    All Courses Available are
+        <h2>All Courses Available</h2>
     <ol>
         <c:forEach items="${CourseList}" var="Course">
             <li>Course Name: ${Course.coursename}&nbsp&nbsp; &nbsp;&nbsp; Credit Hours: ${Course.credithours}&nbsp; <a
@@ -42,16 +42,17 @@
         </c:forEach>
     </ol>
 </div>
+    <h3> Add a New Course</h3>
     <form action="/courseadmin.do" method="post">
-
-        Coursename: <input type="text" name="Username" /> <BR/><BR/>
-        Credit Hours: <input type="text" name="Name" /><BR/><BR/>
+        Course name: <input type="text" name="coursename" />
+        Credit Hours: <input type="text" name="credithours" />
+        Assign a teacher:
         <select name="Teacher">
             <c:forEach items="${TeacherList}" var="Teacher">
                 <option value="${Teacher.teachername}">${Teacher.teachername}</option>
             </c:forEach>
         </select>
-        <input type="submit" value="Register" />
+        <input type="submit" value="Add New Course" />
 
     </form>
 </div>

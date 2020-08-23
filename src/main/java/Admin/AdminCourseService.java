@@ -48,10 +48,32 @@ public class AdminCourseService {
         return x;
     }
 
+    public void AddNewCourse(String CourseName , int CreditHours, String TeacherName) throws SQLException {
+        int TeacherID=0;
+        Connection conn;
+        conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
 
+        Statement stmt = conn.createStatement();
+        String SQL = "SELECT TeacherID from Teacher where TeacherName='"+TeacherName+"'";
+        ResultSet rs = stmt.executeQuery(SQL);
+        while (rs.next()) {
+            TeacherID = rs.getInt("TeacherID");
+        }
 
+        String query = " insert into Course (CourseName,CreditHours,TeacherID)"
+                + " values (?, ?, ?)";
+        // create the mssql insert preparedstatement
+        PreparedStatement preparedStmt = conn.prepareStatement(query);
+        preparedStmt.setString(1, CourseName);
+        preparedStmt.setInt(2, CreditHours);
+        preparedStmt.setInt(3, TeacherID);
+        // execute the preparedstatement
+        preparedStmt.execute();
+
+    }
         public static void main(String[] args) throws SQLException {
         AdminCourseService x = new AdminCourseService();
-        x.ShowCourseList("Math1");
+//        x.AddNewCourse("Math8",5,"Teacher1");
+     System.out.println(x.ShowAllCourses());
     }
 }

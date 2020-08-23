@@ -19,9 +19,8 @@
 
 <body>
 <div class="container">
-    <H1>Welcome ${Username}</H1>
 
-    Your Courses are
+    <h2>Your Courses</h2>
     <ol>
         <c:forEach items="${CourseList}" var="Course">
             <li>Course Name: ${Course.coursename}&nbsp&nbsp;  Credit Hours: ${Course.credithours} <a
@@ -29,7 +28,7 @@
         </c:forEach>
     </ol>
     <form action="/studentship.do" method="post">
-        Select a Course :&nbsp;
+        <h3>Select a Course :&nbsp;</h3>
         <select name="category">
             <c:forEach items="${NewCourseList}" var="category">
                 <option value="${category.coursename}">${category.coursename}</option>

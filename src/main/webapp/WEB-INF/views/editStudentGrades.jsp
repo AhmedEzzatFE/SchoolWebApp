@@ -18,8 +18,8 @@
 </head>
 <body>
 <div class="container">
-        Select the required course and assign the grade
-        <ol>
+    <h2>Select the required course and assign the grade</h2>
+    <ol>
 
              <form action="/editStudentGrades.do" method="post">
                  <select name="CourseList">
@@ -35,8 +35,6 @@
                 </select>
                 <input type="submit" value="Add Grade" />
             </form>
-
-
     </ol>
 </div>
 </body>
