@@ -3,6 +3,7 @@ C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Admin
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Admin\Student.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\LoginPackage\LoginServlet.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Student\ViewCourse.java
+C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Teacher\TeacherDetailServlet.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Admin\AdminCourseService.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Teacher\AdminTeacherService.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Student\CourseService.java
@@ -12,6 +13,7 @@ C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Stude
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Admin\CourselistServlet.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\LoginPackage\SignUpServlet.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Student\Course.java
+C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Teacher\AdminTeacherServlet.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Student\ViewCourseService.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\Admin\EditStudentGradesServlet.java
 C:\Users\hezza\Desktop\JavaProjects\Ahmed Gamal\SchoolWebApp\src\main\java\LoginPackage\loginFilter.java

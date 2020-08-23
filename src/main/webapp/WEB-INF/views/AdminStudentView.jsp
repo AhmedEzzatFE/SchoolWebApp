@@ -25,7 +25,7 @@
     <ul class="nav navbar-nav">
         <li class="active"><a href="#">Students &nbsp;</a></li>
         <li><a href="/courseadmin.do">Courses &nbsp;</a></li>
-        <li><a href="http://www.in28minutes.com">Teachers  &nbsp;</a></li>
+        <li><a href="/adminsterteacher.do">Teachers</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
