@@ -28,13 +28,13 @@
         </c:forEach>
     </ol>
     <form action="/studentship.do" method="post">
-        <h3>Select a Course :&nbsp;</h3>
+        <h3>Enroll in a course :&nbsp;</h3>
         <select name="category">
             <c:forEach items="${NewCourseList}" var="category">
                 <option value="${category.coursename}">${category.coursename}</option>
             </c:forEach>
         </select>
-        <br/><br/>
+        
         <input type="submit" value="Add Course" />
     </form>
     <p>
