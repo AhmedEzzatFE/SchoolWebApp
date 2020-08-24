@@ -7,18 +7,15 @@
           rel="stylesheet">
 
     <style>
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #f5f5f5;
-        }
+        .container{
+
+            background-color: darkgray}
+
     </style>
 </head>
 
-<body>
-<div class="container">
+<body class="container">
+<div >
 
     <h1>Course Details</h1>
     <p>Course Name:${Coursedetails.coursename}</p><br/><p>Your Grade: ${Coursedetails.grade}</p><br/>

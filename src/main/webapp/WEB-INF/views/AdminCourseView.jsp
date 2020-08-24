@@ -7,17 +7,12 @@
           rel="stylesheet">
 
     <style>
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #f5f5f5;
-        }
+        .container{background-color: darkgray}
+
     </style>
 </head>
-<body>
-<div class="container">
+<body class="container">
+<div >
 
     <nav class="navbar navbar-default">
 
@@ -32,8 +27,6 @@
             <li><a href="/logout.do">Logout &nbsp;</a></li>
         </ul>
     </nav>
-    <div class="container">
-
         <h2>All Courses Available</h2>
     <ol>
         <c:forEach items="${CourseList}" var="Course">
@@ -41,7 +34,7 @@
                     href="/courselist.do?coursename=${Course.coursename}">Show Student List</a></li>
         </c:forEach>
     </ol>
-</div>
+
     <h3> Add a New Course</h3>
     <form action="/courseadmin.do" method="post">
         Course name: <input type="text" name="coursename" />

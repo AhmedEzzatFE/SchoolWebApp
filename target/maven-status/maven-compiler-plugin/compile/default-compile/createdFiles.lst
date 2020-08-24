@@ -4,5 +4,6 @@ Admin\EditStudentGradesServlet.class
 Teacher\AdminTeacherServlet.class
 Teacher\AdminTeacherService.class
 Student\CourseServlet.class
+LoginPackage\LogoutServlet.class
 Teacher\TeacherDetailServlet.class
 Teacher\Teacher.class

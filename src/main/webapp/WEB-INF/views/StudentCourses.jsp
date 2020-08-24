@@ -7,19 +7,19 @@
           rel="stylesheet">
 
     <style>
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #f5f5f5;
-        }
+        .container{background-color: darkgray}
+
     </style>
 </head>
 
-<body>
-<div class="container">
+<<body class="container">
+<nav class="navbar navbar-default">
+        <a href="" class="navbar-brand">My School</a>
 
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout.do">Logout &nbsp;</a></li>
+        </ul>
+    </nav>
     <h2>Your Courses</h2>
     <ol>
         <c:forEach items="${CourseList}" var="Course">

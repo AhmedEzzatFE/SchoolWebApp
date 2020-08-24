@@ -13,6 +13,7 @@ public class SignUpServlet extends HttpServlet {
     LoginService x = new LoginService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+        System.out.println("Called");
         request.getRequestDispatcher("/WEB-INF/views/signup.jsp").forward(request,response);
     }
 

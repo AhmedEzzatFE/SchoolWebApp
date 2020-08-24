@@ -7,23 +7,18 @@
           rel="stylesheet">
 
     <style>
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #f5f5f5;
-        }
+        .container{background-color: darkgray}
+
     </style>
 </head>
-<body>
-<div class="container">
+<body class="container">
+<div >
 
     <nav class="navbar navbar-default">
 
         <a href="/" class="navbar-brand">My School</a>
         <ul class="nav navbar-nav">
-            <li><a href="#">Students &nbsp;</a></li>
+            <li><a href="/administerStudent.do">Students</a></li>
             <li><a href="/courseadmin.do">Courses &nbsp;</a></li>
             <li  class="active"><a href="/adminsterteacher.do">Teachers</a></li>
         </ul>

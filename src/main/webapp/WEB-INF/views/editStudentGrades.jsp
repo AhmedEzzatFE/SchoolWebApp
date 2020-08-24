@@ -7,17 +7,12 @@
           rel="stylesheet">
 
     <style>
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #f5f5f5;
-        }
+        .container{background-color: darkgray}
+
     </style>
 </head>
-<body>
-<div class="container">
+<body class="container">
+<div >
     <h2>Select the required course and assign the grade</h2>
     <ol>
 
