@@ -17,4 +17,6 @@ public class ViewCourseServlet extends HttpServlet {
        request.setAttribute("Coursedetails",x.CourseDetails(request.getParameter("coursename"),(String) request.getSession().getAttribute("Username")));
         request.getRequestDispatcher("/WEB-INF/views/viewcourse.jsp").forward(request,response);
     }
+
+
 }

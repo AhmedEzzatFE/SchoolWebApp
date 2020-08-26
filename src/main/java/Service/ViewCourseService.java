@@ -34,6 +34,27 @@ public class ViewCourseService {
         return x;
     }
 
+    public ViewCourse NewCourseDetails(String CourseName){
+        ViewCourse x = new ViewCourse();
+        x.setCoursename(CourseName);
+        Connection conn;
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
+            Statement stmt = conn.createStatement();
+            String SQL = SQL="SELECT TeacherName,Telephone from Teacher where" +
+                    " TeacherID=(SELECT Course.TeacherID from Course where CourseName='"+CourseName+"')";
+            ResultSet  rs=stmt.executeQuery(SQL);
+            while (rs.next()) {
+                x.setTeachername(rs.getString("TeacherName"));
+                x.setTeachertelephone(rs.getInt("Telephone"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return x;
+    }
+
 
 
 }

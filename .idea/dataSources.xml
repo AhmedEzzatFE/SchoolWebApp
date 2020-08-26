@@ -7,5 +7,11 @@
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
       <jdbc-url>jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="JdbcSchoolSchema@localhost" uuid="49ab2ac8-100f-49a1-99d5-6c47241bc00b">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;</jdbc-url>
+    </data-source>
   </component>
 </project>

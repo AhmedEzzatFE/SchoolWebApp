@@ -1,6 +1,8 @@
 package DAO;
 
+import Entities.ViewCourse;
 import Service.CourseService;
+import Service.ViewCourseService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,11 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/studentship.do")
 public class CourseServlet extends HttpServlet {
 CourseService x = new CourseService();
+ViewCourseService y = new ViewCourseService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
         request.setAttribute("CourseList",x.ShowCourses((String) request.getSession().getAttribute("Username")));
@@ -21,7 +25,9 @@ CourseService x = new CourseService();
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-    try {
+    String action = request.getParameter("action");
+    if(action == null){
+        try {
             x.AddCourse(request.getParameter("category"),(String) request.getSession().getAttribute("Username"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -29,6 +35,19 @@ CourseService x = new CourseService();
         request.setAttribute("CourseList",x.ShowCourses((String) request.getSession().getAttribute("Username")));
         request.setAttribute("NewCourseList",x.ShowNewcourses((String) request.getSession().getAttribute("Username")));
         response.sendRedirect("/studentship.do");
-//        request.getRequestDispatcher("/WEB-INF/views/StudentCourses.jsp").forward(request,response);
     }
+    else{
+        response.setContentType("html");
+        String  Selected= request.getParameter("Selected");
+        PrintWriter out = response.getWriter();
+        ViewCourse SendingResponse = y.NewCourseDetails(Selected);
+        out.println("Course Name:"+SendingResponse.coursename);
+
+        out.println("Teacher Assigned to this course:"+SendingResponse.teachername);
+
+        out.println("Teacher Contact Info: "+SendingResponse.teachertelephone);
+
+    }
+}
+
 }
