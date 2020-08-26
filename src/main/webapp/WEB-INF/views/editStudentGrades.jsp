@@ -45,7 +45,20 @@
     </script>
 </head>
 <body class="container">
-<div >
+<div>
+    <nav class="navbar navbar-default">
+
+        <a href="/" class="navbar-brand">My School</a>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/administerStudent.do">Students &nbsp;</a></li>
+            <li><a href="/courseadmin.do">Courses &nbsp;</a></li>
+            <li><a href="/adminsterteacher.do">Teachers</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout.do">Logout &nbsp;</a></li>
+        </ul>
+    </nav>
     <h2>Select the required course and assign the grade</h2>
     <ol>
         <form action="/editStudentGrades.do" method="post" name="productForm">

@@ -12,12 +12,30 @@
             background-color: darkgray}
 
     </style>
+    <script type="text/javascript">
+        function validateForm() {
+            var x = document.forms["myForm"]["Username"].value;
+            var y = document.forms["myForm"]["password"].value;
+           if(x === "" & y===""){
+               document.getElementById("error").innerHTML = "Empty Fields, Please enter your Credentials ";
+               return false;
+           }
+            else if (x === "") {
+                document.getElementById("error").innerHTML = "No Username found , Please Enter your Username";
+                return false;
+            }
+            else if (y===""){
+                document.getElementById("error").innerHTML = "No Password found , Please Enter your Password    ";
+                return false;
+            }
+        }
+    </script>
 </head>
 
 <body class="container">
 <div>
-    <form action="/login.do" method="post">
-        <p>
+    <form action="/login.do" method="post"  name="myForm" onsubmit="return validateForm()" required>
+        <p id="error">
             <font color="red">${errorMessage}</font>
         </p>
         Username: <input type="text" name="Username" /> Password:<input
