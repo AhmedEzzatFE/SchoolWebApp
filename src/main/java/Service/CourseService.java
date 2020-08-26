@@ -7,6 +7,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseService {
+    public String GetGrade(String CourseName, String Username){
+        String Grade= null;
+        int CID =0;
+        int SID=0;
+        Connection conn;
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
+            Statement stmt = conn.createStatement();
+            String SQL = "SELECT CourseID from Course where CourseName='"+CourseName+"'";
+            ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+            CID = Integer.parseInt(rs.getString("CourseID"));
+            }
+            SQL="SELECT StudentID from Student where Username='"+Username+"'";
+            rs= stmt.executeQuery(SQL);
+            while (rs.next()) {
+                SID = Integer.parseInt(rs.getString("StudentID"));
+            }
+            SQL="SELECT Grade from enroll where SID='"+SID+"' and CID='"+CID+"'";
+            rs= stmt.executeQuery(SQL);
+            while (rs.next()) {
+                Grade= rs.getString("Grade");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Grade;
+    }
     public List<Course> ShowCourses(String Username) {
         List<Course> CourseList = new ArrayList<>();
         Connection conn;
@@ -17,7 +45,8 @@ public class CourseService {
                     " in(SELECT CID FROM enroll where SID=(SELECT StudentID from Student where Username='" + Username + "'))";
             ResultSet rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                CourseList.add(new Course(rs.getString("CourseName"), rs.getInt("CreditHours")));
+
+                CourseList.add(new Course(rs.getString("CourseName"), rs.getInt("CreditHours"),GetGrade(rs.getString("CourseName"),Username)));
             }
 
         } catch (SQLException e) {
@@ -89,8 +118,8 @@ public class CourseService {
         }
         return x;
     }
-//    public static void main(String[] args) throws SQLException {
-//        CourseService x = new CourseService();
-//        x.ShowNewcourses("hezzat46");
-//    }
+    public static void main(String[] args) throws SQLException {
+        CourseService x = new CourseService();
+       System.out.println(x.ShowCourses("hezzat46"));
+    }
 }

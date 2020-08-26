@@ -30,7 +30,7 @@
         <h2>All Courses Available</h2>
     <ol>
         <c:forEach items="${CourseList}" var="Course">
-            <li>Course Name: ${Course.coursename}&nbsp&nbsp; &nbsp;&nbsp; Credit Hours: ${Course.credithours}&nbsp; <a
+            <li>Course Name: ${Course.coursename}&nbsp&nbsp; &nbsp;&nbsp; Credit Hours: ${Course.credithours}&nbsp; Number Of Students: ${Course.numberofstudents} <a
                     href="/courselist.do?coursename=${Course.coursename}">Show Student List</a></li>
         </c:forEach>
     </ol>

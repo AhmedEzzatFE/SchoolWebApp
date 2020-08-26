@@ -8,16 +8,37 @@ import Entities.Student;
 
 public class AdminCourseService {
 
-    public List<Course> ShowAllCourses() {
-        List<Course> x = new ArrayList<>();
+    public List<String> GetCourseName(String CID){
+        List<String> x = new ArrayList<>();
         Connection conn;
         try {
             conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
             Statement stmt = conn.createStatement();
-            String SQL = "SELECT CourseName,CreditHours from Course";
+            String SQL = "Select CourseName,CreditHours from Course where CourseID='"+CID+"'";
             ResultSet rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                x.add(new Course(rs.getString("CourseName"), rs.getInt("CreditHours")));
+                x.add(rs.getString("CourseName"));
+                 x.add(String.valueOf(rs.getInt("CreditHours")));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return x;
+    }
+    public List<Course> ShowAllCourses() {
+        List<Course> x = new ArrayList<>();
+        List<String> y;
+        Connection conn;
+        try {
+            conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
+            Statement stmt = conn.createStatement();
+            String SQL = "Select count (SID) as NumberOfStudents,CID from enroll group by CID";
+            ResultSet rs = stmt.executeQuery(SQL);
+            while (rs.next()) {
+                y=GetCourseName(rs.getString("CID"));
+                x.add(new Course(y.get(0),Integer.parseInt(y.get(1)),Integer.parseInt(rs.getString("NumberOfStudents"))));
             }
 
         } catch (SQLException throwables) {
@@ -73,9 +94,10 @@ public class AdminCourseService {
         preparedStmt.execute();
 
     }
-        public static void main(String[] args) throws SQLException {
-        AdminCourseService x = new AdminCourseService();
-//        x.AddNewCourse("Math8",5,"Teacher1");
-     System.out.println(x.ShowAllCourses());
-    }
+
+//        public static void main(String[] args) throws SQLException {
+//        AdminCourseService x = new AdminCourseService();
+////        x.AddNewCourse("Math8",5,"Teacher1");
+//     System.out.println(x.ShowAllCourses());
+//    }
 }
