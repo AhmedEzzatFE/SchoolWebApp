@@ -13,10 +13,10 @@ public class AdminTeacherService {
         try {
             Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;");
             Statement stmt = conn.createStatement();
-            String SQL = "SELECT TeacherName from Teacher";
+            String SQL = "SELECT TeacherName,Telephone,Field from Teacher";
             ResultSet rs = stmt.executeQuery(SQL);
             while (rs.next()) {
-                x.add(new Teacher(rs.getString("TeacherName"))) ;
+                x.add(new Teacher(rs.getString("TeacherName"),Integer.parseInt(rs.getString("Telephone")),rs.getString("Field"))) ;
             }
 
     } catch (SQLException throwables) {

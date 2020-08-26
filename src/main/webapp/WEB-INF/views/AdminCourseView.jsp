@@ -8,8 +8,26 @@
 
     <style>
         .container{background-color: darkgray}
-
     </style>
+
+    <script type="text/javascript">
+        function validateForm() {
+            var x = document.forms["myForm"]["coursename"].value;
+            var y = document.forms["myForm"]["credithours"].value;
+            if(x === "" & y===""){
+                document.getElementById("error").innerHTML = "Empty Fields, Please enter Full Teacher Details ";
+                return false;
+            }
+            else if (x === "") {
+                document.getElementById("error").innerHTML = "No Course name found , Please Enter Course Name";
+                return false;
+            }
+            else if (y === "") {
+                document.getElementById("error").innerHTML = "No Credit Hours found , Please Enter Credit Hours assigned ";
+                return false;
+            }
+        }
+    </script>
 </head>
 <body class="container">
 <div >
@@ -36,7 +54,7 @@
     </ol>
 
     <h3> Add a New Course</h3>
-    <form action="/courseadmin.do" method="post">
+    <form action="/courseadmin.do" method="post"  name="myForm" onsubmit="return validateForm()" required>
         Course name: <input type="text" name="coursename" />
         Credit Hours: <input type="text" name="credithours" />
         Assign a teacher:
@@ -45,8 +63,8 @@
                 <option value="${Teacher.teachername}">${Teacher.teachername}</option>
             </c:forEach>
         </select>
+        <p id="error"></p>
         <input type="submit" value="Add New Course" />
-
     </form>
 </div>
 <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
