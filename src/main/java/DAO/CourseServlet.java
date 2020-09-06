@@ -26,9 +26,12 @@ ViewCourseService y = new ViewCourseService();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
     String action = request.getParameter("action");
+    System.out.println(action);
+    System.out.println(request.getParameter("CourseList"));
+
     if(action == null){
         try {
-            x.AddCourse(request.getParameter("category"),(String) request.getSession().getAttribute("Username"));
+            x.AddCourse(request.getParameter("CourseList"),(String) request.getSession().getAttribute("Username"));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

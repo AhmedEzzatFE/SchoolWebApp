@@ -118,8 +118,8 @@ public class CourseService {
         }
         return x;
     }
-    public static void main(String[] args) throws SQLException {
-        CourseService x = new CourseService();
-       System.out.println(x.ShowCourses("hezzat46"));
-    }
+//    public static void main(String[] args) throws SQLException {
+//        CourseService x = new CourseService();
+//       System.out.println(x.ShowCourses("hezzat46"));
+//    }
 }

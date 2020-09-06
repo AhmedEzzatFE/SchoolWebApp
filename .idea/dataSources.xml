@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="JdbcSchoolSchema@localhost" uuid="7c343ca1-73d0-4808-a56d-d6095fd48fbd">
-      <driver-ref>sqlserver.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433;database=JdbcSchoolSchema;integratedSecurity=true;</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="JdbcSchoolSchema@localhost" uuid="49ab2ac8-100f-49a1-99d5-6c47241bc00b">
+    <data-source source="LOCAL" name="JdbcSchoolSchema@localhost" uuid="926e3b86-c695-4e8e-be9c-769d71ac9a67">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
